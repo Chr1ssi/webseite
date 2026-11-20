@@ -28,7 +28,7 @@ curl -fsSL "${auth[@]}" -H "Accept: application/octet-stream" -o "$tmp" "$url"
 
 # Nie ein JAR veröffentlichen, das unvollständig ist oder die Seite nicht enthält.
 [ "$digest" = "sha256:$(sha256sum "$tmp" | cut -d' ' -f1)" ] || { echo "Prüfsumme passt nicht" >&2; exit 1; }
-unzip -l "$tmp" | grep -q 'BOOT-INF/classes/static/index.html' || { echo "JAR ohne Seite" >&2; exit 1; }
+unzip -l "$tmp" 'BOOT-INF/classes/static/index.html' >/dev/null || { echo "JAR ohne Seite" >&2; exit 1; }
 
 chmod 0644 "$tmp"
 mv "$tmp" "$dir/webseite.jar"

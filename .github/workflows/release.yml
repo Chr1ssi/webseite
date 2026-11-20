@@ -41,7 +41,7 @@ jobs:
         run: ./gradlew test bootJar
 
       - name: JAR muss die Seite enthalten
-        run: unzip -l backend/build/libs/webseite.jar | grep -q 'BOOT-INF/classes/static/index.html'
+        run: unzip -l backend/build/libs/webseite.jar 'BOOT-INF/classes/static/index.html'
 
       - name: Release veröffentlichen
         env:
