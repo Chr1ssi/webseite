@@ -1,0 +1,73 @@
+@if (profile(); as p) {
+  <header class="hero">
+    <p class="prompt" aria-hidden="true">~/christoph-keil $ whoami</p>
+    <h1>{{ p.name }}<span class="cursor" aria-hidden="true">_</span></h1>
+    <p class="role">{{ p.title }}</p>
+    <p class="tagline">{{ p.tagline }}</p>
+    <nav class="actions">
+      <a class="btn primary" href="#kontakt">Kontakt</a>
+      <button class="btn" type="button" (click)="print()">Lebenslauf als PDF</button>
+      <a class="btn" [href]="p.contact.github" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" [href]="p.contact.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <p class="print-only">{{ p.contact.email }} · {{ p.contact.github }} · {{ p.contact.linkedin }}</p>
+  </header>
+
+  <main>
+    <section class="about">
+      <h2><span>01</span> Über mich</h2>
+      @for (para of p.about; track $index) { <p>{{ para }}</p> }
+    </section>
+
+    <section class="projects">
+      <h2><span>02</span> Projekte</h2>
+      <div class="cards">
+        @for (pr of p.projects; track pr.name) {
+          <article class="card">
+            <h3>{{ pr.name }} <small>{{ pr.tagline }}</small></h3>
+            <p>{{ pr.description }}</p>
+            <ul class="highlights">@for (h of pr.highlights; track h) { <li>{{ h }}</li> }</ul>
+            <ul class="chips">@for (t of pr.tech; track t) { <li>{{ t }}</li> }</ul>
+            @if (pr.url) { <a class="more" [href]="pr.url" target="_blank" rel="noopener">Code auf GitHub →</a> }
+          </article>
+        }
+      </div>
+    </section>
+
+    @for (block of [{ n: '03', h: 'Berufserfahrung', cls: 'experience', items: p.experience }, { n: '04', h: 'Ausbildung', cls: 'education', items: p.education }]; track block.h) {
+      <section [class]="block.cls">
+        <h2><span>{{ block.n }}</span> {{ block.h }}</h2>
+        <ol class="timeline">
+          @for (e of block.items; track $index) {
+            <li>
+              <span class="period">{{ e.period }}</span>
+              <div><strong>{{ e.role }}</strong> <span class="company">· {{ e.company }}</span>
+                @if (e.description) { <p>{{ e.description }}</p> }
+              </div>
+            </li>
+          }
+        </ol>
+      </section>
+    }
+
+    <section class="skills">
+      <h2><span>05</span> Kenntnisse</h2>
+      @for (g of p.skills; track g.label) {
+        <div class="skill-group">
+          <span class="label">{{ g.label }}</span>
+          <ul class="chips">@for (s of g.items; track s) { <li>{{ s }}</li> }</ul>
+        </div>
+      }
+    </section>
+
+    <section id="kontakt" class="contact no-print">
+      <h2><span>06</span> Kontakt</h2>
+      <p>Interesse an einem Gespräch? Schreib mir – ich antworte in der Regel innerhalb von ein, zwei Tagen.</p>
+      <app-contact-form />
+    </section>
+  </main>
+
+  <footer class="no-print">© {{ p.name }} · gebaut mit Kotlin, Spring Boot und Angular</footer>
+} @else {
+  <p class="loading">Lade…</p>
+}

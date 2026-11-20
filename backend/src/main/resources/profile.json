@@ -1,0 +1,141 @@
+{
+  "name": "Christoph Keil",
+  "title": "Softwareentwickler",
+  "tagline": "Ich baue Software – von der Hardware bis zur Oberfläche.",
+  "about": [
+    "Ich will wissen, wie Dinge funktionieren – am liebsten, indem ich sie selbst baue. Mein Desktop läuft auf einem Wayland-Compositor, den ich selbst geschrieben habe, mein ganzes System ist mit NixOS beschrieben, und zu Hause läuft ein Server mit über einem Dutzend Diensten, die ich selbst betreibe.",
+    "Zuletzt war ich Werkstudent bei Signal7 und habe dort die internen Programme der Firma komplett neu geschrieben. Davor habe ich bei BidX an Software für Amazon Advertising mitgearbeitet – und bei Comspot im Vertrieb gesehen, wie es auf der anderen Seite des Produkts aussieht.",
+    "Informatik habe ich an der TU Darmstadt studiert, das Studium aber ohne Abschluss beendet. Programmieren gelernt habe ich vor allem im Job und an meinen eigenen Projekten. KI-Werkzeuge gehören für mich inzwischen dazu – die Verantwortung für den Code behalte ich trotzdem selbst.",
+    "Jetzt suche ich eine Stelle, in der ich an echten Systemen mitbauen kann: im Backend, systemnah oder in der Infrastruktur. Hauptsache, es gibt etwas zu verstehen."
+  ],
+  "contact": {
+    "email": "mail@christoph-keil.com",
+    "github": "https://github.com/chr1ssi",
+    "linkedin": "https://www.linkedin.com/in/c-keil"
+  },
+  "skills": [
+    {
+      "label": "Gute Kenntnisse",
+      "items": [
+        "Java",
+        "Kotlin",
+        "Python",
+        "PHP",
+        "JavaScript (Angular)",
+        "C/C++",
+        "Rust",
+        "SQL",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "label": "Weitere",
+      "items": [
+        "Swift",
+        "HTML",
+        "MS Office"
+      ]
+    },
+    {
+      "label": "Sprachen",
+      "items": [
+        "Deutsch – sehr gut",
+        "Englisch – sehr gut"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "period": "08/2024 – 07/2026",
+      "role": "Werkstudent Webentwicklung",
+      "company": "Signal7 GmbH",
+      "description": "Vollständige Neuentwicklung (Rewrite) der firmeninternen Programme"
+    },
+    {
+      "period": "04/2022 – 03/2024",
+      "role": "Werkstudent Sales Assistant",
+      "company": "Comspot GmbH",
+      "description": "Vertrieb"
+    },
+    {
+      "period": "01/2019 – 10/2019",
+      "role": "Werkstudent Webentwicklung",
+      "company": "BidX GmbH",
+      "description": "Amazon Advertising"
+    },
+    {
+      "period": "2018",
+      "role": "Nebenjob im Service",
+      "company": "Mise En Place Frankfurt",
+      "description": ""
+    },
+    {
+      "period": "2016",
+      "role": "Praktikum (6 Wochen)",
+      "company": "H. Schneider Bauelemente GmbH",
+      "description": "Handwerk"
+    }
+  ],
+  "education": [
+    {
+      "period": "2016 – 2026",
+      "role": "Studium der Informatik (ohne Abschluss)",
+      "company": "Technische Universität Darmstadt",
+      "description": ""
+    },
+    {
+      "period": "2013 – 2016",
+      "role": "Schwerpunkt Datenverarbeitung",
+      "company": "Hochtaunusschule Oberursel",
+      "description": ""
+    },
+    {
+      "period": "2006 – 2013",
+      "role": "Gymnasium",
+      "company": "Gymnasium Oberursel",
+      "description": ""
+    }
+  ],
+  "projects": [
+    {
+      "name": "Splice",
+      "tagline": "Eigener Wayland-Compositor in Rust",
+      "description": "Splice ist mein eigener Wayland-Compositor, gebaut auf Smithay. Das Ziel: schlank, möglichst wenig Latenz beim Spielen und sauberes Screen-Capture fürs Streaming. Er ist jeden Tag mein Desktop – auf echter Hardware, nicht nur in der VM.",
+      "highlights": [
+        "Multi-Monitor direkt über DRM/GBM und libinput",
+        "Gaming-Pfad: Direct Scanout, VRR, explizite Synchronisation",
+        "Screen-Sharing über PipeWire mit eigenem Portal",
+        "Eingebaute Shell: Bar, Launcher, Sperrbildschirm, Farbschema aus dem Wallpaper",
+        "In Crates aufgeteilt, Layout-Kern unabhängig vom Compositor getestet"
+      ],
+      "tech": [
+        "Rust",
+        "Smithay",
+        "Wayland",
+        "PipeWire",
+        "NixOS"
+      ],
+      "url": "https://github.com/Chr1ssi/Splice-Compositor"
+    },
+    {
+      "name": "Homelab",
+      "tagline": "Selbst gehostete Infrastruktur",
+      "description": "Ein Server mit 13 Diensten in Containern, dazu ein Raspberry Pi als zweiter Knoten. Gerade bereite ich den Umzug von Proxmox auf NixOS vor – danach steckt das komplette Homelab in einer einzigen, versionierten Konfiguration.",
+      "highlights": [
+        "ZFS-Mirror und automatische Backups mit Aufbewahrungsregeln",
+        "Ausfallsicherer DNS: zwei Knoten mit VRRP-Failover",
+        "Single Sign-On für alle Dienste über OpenID Connect",
+        "Reverse Proxy, Monitoring und Dashboard aus einer gemeinsamen Routentabelle erzeugt",
+        "Lokale KI-Modelle auf eigener GPU"
+      ],
+      "tech": [
+        "NixOS",
+        "Proxmox",
+        "ZFS",
+        "OIDC",
+        "Linux"
+      ],
+      "url": ""
+    }
+  ]
+}

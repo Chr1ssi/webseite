@@ -1,0 +1,53 @@
+# Baut bei jedem Push auf main das JAR (Backend + Angular) und veröffentlicht es als Release.
+# Die Homelab-Server laden das neueste Release per Timer (deploy/update-webseite.sh).
+name: release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Frontend testen und bauen
+        working-directory: frontend
+        run: |
+          npm ci
+          npx ng test --watch=false
+          npx ng build
+
+      - name: Backend testen und JAR bauen
+        working-directory: backend
+        run: ./gradlew test bootJar
+
+      - name: JAR muss die Seite enthalten
+        run: unzip -l backend/build/libs/webseite.jar | grep -q 'BOOT-INF/classes/static/index.html'
+
+      - name: Release veröffentlichen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "build-${{ github.run_number }}" backend/build/libs/webseite.jar \
+            --title "Build ${{ github.run_number }}" \
+            --notes "Commit ${{ github.sha }}" \
+            --target "${{ github.sha }}" --latest
