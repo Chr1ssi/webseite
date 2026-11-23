@@ -1,0 +1,21 @@
+:host { display: block; }
+.cards { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column;
+  transition: border-color .2s, transform .2s; }
+.card:hover { border-color: color-mix(in srgb, var(--accent) 60%, var(--border)); transform: translateY(-2px); }
+.card h3 { margin: 0; font-size: 1.35rem; }
+.card h3 small { display: block; font-size: .85rem; font-weight: 400; font-family: var(--mono); color: var(--accent); margin-top: .2rem; }
+.card p { color: var(--muted); }
+.highlights { padding-left: 1.1rem; margin: 0 0 1rem; }
+.highlights li { margin-bottom: .3rem; }
+.highlights li::marker { content: "▹ "; color: var(--accent); }
+.more { margin-top: auto; padding-top: .5rem; font-family: var(--mono); font-size: .9rem; text-decoration: none; }
+.more:hover { text-decoration: underline; }
+
+@media print {
+  .highlights, .card .more { display: none; }
+  .cards { display: block; }
+  .card { border: none; padding: 0; margin-bottom: .5rem; break-inside: avoid; }
+  .card h3 { font-size: 11pt; } .card h3 small { display: inline; margin-left: .4rem; }
+  .card p { margin: .2rem 0; color: var(--text); }
+}

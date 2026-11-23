@@ -1,11 +1,11 @@
-package de.webseite.backend
+package com.christophkeil.webseite
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class BackendApplication
+class WebseiteApplication
 
 fun main(args: Array<String>) {
-	runApplication<BackendApplication>(*args)
+	runApplication<WebseiteApplication>(*args)
 }

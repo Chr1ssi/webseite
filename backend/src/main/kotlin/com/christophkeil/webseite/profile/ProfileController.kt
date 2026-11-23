@@ -1,4 +1,4 @@
-package de.webseite.backend
+package com.christophkeil.webseite.profile
 
 import org.springframework.core.io.ClassPathResource
 import org.springframework.core.io.Resource

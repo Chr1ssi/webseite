@@ -1,0 +1,13 @@
+<section>
+  <h2><span>{{ number() }}</span> {{ heading() }}</h2>
+  <ol class="timeline">
+    @for (e of entries(); track $index) {
+      <li>
+        <span class="period">{{ e.period }}</span>
+        <div><strong>{{ e.role }}</strong> <span class="company">· {{ e.company }}</span>
+          @if (e.description) { <p>{{ e.description }}</p> }
+        </div>
+      </li>
+    }
+  </ol>
+</section>

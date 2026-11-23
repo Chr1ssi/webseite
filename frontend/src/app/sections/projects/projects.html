@@ -1,0 +1,14 @@
+<section class="projects">
+  <h2><span>02</span> Projekte</h2>
+  <div class="cards">
+    @for (pr of projects(); track pr.name) {
+      <article class="card">
+        <h3>{{ pr.name }} <small>{{ pr.tagline }}</small></h3>
+        <p>{{ pr.description }}</p>
+        <ul class="highlights">@for (h of pr.highlights; track h) { <li>{{ h }}</li> }</ul>
+        <ul class="chips">@for (t of pr.tech; track t) { <li>{{ t }}</li> }</ul>
+        @if (pr.url) { <a class="more" [href]="pr.url" target="_blank" rel="noopener">Code auf GitHub →</a> }
+      </article>
+    }
+  </div>
+</section>

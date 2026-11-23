@@ -1,0 +1,13 @@
+<header class="hero">
+  <p class="prompt" aria-hidden="true">~/christoph-keil $ whoami</p>
+  <h1>{{ profile().name }}<span class="cursor" aria-hidden="true">_</span></h1>
+  <p class="role">{{ profile().title }}</p>
+  <p class="tagline">{{ profile().tagline }}</p>
+  <nav class="actions">
+    <a class="btn primary" href="#kontakt">Kontakt</a>
+    <button class="btn" type="button" (click)="print()">Lebenslauf als PDF</button>
+    <a class="btn" [href]="profile().contact.github" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" [href]="profile().contact.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+  </nav>
+  <p class="print-only">{{ profile().contact.email }} · {{ profile().contact.github }} · {{ profile().contact.linkedin }}</p>
+</header>

@@ -1,4 +1,4 @@
-package de.webseite.backend
+package com.christophkeil.webseite.profile
 
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -12,7 +12,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class BackendApplicationTests(@LocalServerPort private val port: Int) {
+class ProfileControllerTests(@LocalServerPort private val port: Int) {
 
 	@Test
 	fun `profile endpoint liefert JSON`() {

@@ -1,4 +1,4 @@
-package de.webseite.backend
+package com.christophkeil.webseite.contact
 
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
