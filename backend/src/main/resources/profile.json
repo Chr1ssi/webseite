@@ -23,16 +23,16 @@
         "PHP",
         "JavaScript (Angular)",
         "C/C++",
-        "Rust",
         "SQL",
-        "PostgreSQL"
+        "PostgreSQL",
+        "HTML"
       ]
     },
     {
       "label": "Weitere",
       "items": [
         "Swift",
-        "HTML",
+        "Rust",
         "MS Office"
       ]
     },
@@ -49,25 +49,25 @@
       "period": "08/2024 – 07/2026",
       "role": "Werkstudent Webentwicklung",
       "company": "Signal7 GmbH",
-      "description": "Vollständige Neuentwicklung (Rewrite) der firmeninternen Programme"
+      "description": "Implementierung von Projekt-/Rechnungs-/Urlaubsverwaltung (Webapp Kotlin-Springboot/Angular"
     },
     {
       "period": "04/2022 – 03/2024",
       "role": "Werkstudent Sales Assistant",
       "company": "Comspot GmbH",
-      "description": "Vertrieb"
+      "description": "Beratung und Verkauf von Hardware und Zubehör"
     },
     {
       "period": "01/2019 – 10/2019",
       "role": "Werkstudent Webentwicklung",
       "company": "BidX GmbH",
-      "description": "Amazon Advertising"
+      "description": "Amazon Advertizing optimization (Webapp PHP/Laravel)"
     },
     {
       "period": "2018",
-      "role": "Nebenjob im Service",
+      "role": "Service",
       "company": "Mise En Place Frankfurt",
-      "description": ""
+      "description": "Serviceaushilfe z.B. auf Messen und im Stadion"
     },
     {
       "period": "2016",
@@ -100,7 +100,7 @@
     {
       "name": "Splice",
       "tagline": "Eigener Wayland-Compositor in Rust",
-      "description": "Splice ist mein eigener Wayland-Compositor, gebaut auf Smithay. Das Ziel: schlank, möglichst wenig Latenz beim Spielen und sauberes Screen-Capture fürs Streaming. Er ist jeden Tag mein Desktop – auf echter Hardware, nicht nur in der VM.",
+      "description": "Splice ist mein eigener Wayland-Compositor, gebaut auf Smithay. Das Ziel: schlank, möglichst wenig Latenz und sauberes Screen-Capture. Dailydriver",
       "highlights": [
         "Multi-Monitor direkt über DRM/GBM und libinput",
         "Gaming-Pfad: Direct Scanout, VRR, explizite Synchronisation",
