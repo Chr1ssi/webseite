@@ -26,10 +26,13 @@ h2 span { font-family: var(--mono); font-size: 1rem; color: var(--accent); margi
 .chips li { font-family: var(--mono); font-size: .8rem; color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
   background: color-mix(in srgb, var(--accent) 8%, transparent); border-radius: 999px; padding: .15rem .65rem; }
 
+@page { size: A4; margin: 0; } /* Ränder setzt app.css, damit das Kopfband bis an den Blattrand reicht */
 @media print {
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; } /* Kopfband und Zeitleisten-Punkte mitdrucken */
+  html { font-size: 10pt; } body { line-height: 1.45; } /* alle rem-Maße schrumpfen mit, damit es auf eine Seite passt */
   .no-print { display: none; }
-  section { padding-top: .9rem; }
-  h2 { font-size: 12pt; margin-bottom: .5rem; }
+  section { padding-top: .8rem; }
+  h2 { font-size: 12pt; margin-bottom: .45rem; color: var(--accent); border-bottom: .75pt solid color-mix(in srgb, var(--accent) 25%, white); padding-bottom: 2pt; }
   h2 span { display: none; } /* Nummern passen nicht zur PDF-Reihenfolge */
   .chips li { background: none; color: var(--text); border-color: var(--border); }
   li { break-inside: avoid; }

@@ -11,7 +11,7 @@ import { Component, input } from '@angular/core';
   styles: `
     :host { display: block; }
     .about p { font-size: 1.1rem; max-width: 46rem; color: var(--text); }
-    @media print { .about p { font-size: 10pt; margin: 0 0 .4rem; } }
+    @media print { :host { display: none; } } /* Freitext nur auf der Webseite */
   `,
 })
 export class About {

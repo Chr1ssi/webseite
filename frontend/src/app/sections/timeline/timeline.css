@@ -12,7 +12,5 @@
 }
 
 @media print {
-  .timeline { border-left: none; padding-left: 0; }
   .timeline li { padding-bottom: .4rem; }
-  .timeline li::before { display: none; }
 }

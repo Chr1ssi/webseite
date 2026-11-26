@@ -3,7 +3,7 @@ footer { margin: 4rem 0 0; padding: 1.5rem 0 2rem; border-top: 1px solid var(--b
 .loading { font-family: var(--mono); color: var(--muted); padding: 5rem 0; }
 
 @media print {
-  :host { max-width: none; padding: 0; font-size: 10pt; }
+  :host { max-width: none; padding: 0 15mm 12mm; font-size: 10pt; }
   main { display: flex; flex-direction: column; }
   /* Lebenslauf-Reihenfolge im PDF: Erfahrung vor Projekten */
   app-about { order: 1; } .experience { order: 2; } .education { order: 3; } app-skills { order: 4; } app-projects { order: 5; }

@@ -13,9 +13,11 @@
 .more:hover { text-decoration: underline; }
 
 @media print {
-  .highlights, .card .more { display: none; }
+  .card > p, .card .more { display: none; }
   .cards { display: block; }
   .card { border: none; padding: 0; margin-bottom: .5rem; break-inside: avoid; }
   .card h3 { font-size: 11pt; } .card h3 small { display: inline; margin-left: .4rem; }
-  .card p { margin: .2rem 0; color: var(--text); }
+  .highlights { margin: .2rem 0 .3rem; }
+  .highlights li { margin-bottom: 0; }
+  .highlights li:nth-child(n+4) { display: none; } /* höchstens drei Stichpunkte je Projekt */
 }
